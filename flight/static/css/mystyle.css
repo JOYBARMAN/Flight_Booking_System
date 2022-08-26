@@ -1,0 +1,21 @@
+*{
+    font-family: 'Roboto', sans-serif !important;
+}
+#footer h5 {
+    font-weight: bold;
+}
+#footer p{
+    color: white;
+    opacity: 0.8;
+    font-size: smalle;
+}
+
+#footer ul {
+    list-style-type: none;
+}
+
+#footer ul li a{
+    color:white ;
+    opacity: 0.8;
+    font-size: smalle;
+}

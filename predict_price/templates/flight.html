@@ -1,0 +1,75 @@
+{% extends "flight/layout.html" %} {% load static %} {% block body %}
+   <div class="mt-5" >
+      <h1 class="text-center">Predict Your Flight Price </h1>
+     <form action="{% url 'price' %}" method="POST" class="container">
+      {% csrf_token %}
+          <div class="form-group">
+            <div class="form-group">
+                <span class="form-label"><b>Departure Date</b></span>
+                  <input class="form-control" name="Dep_Time" type="datetime-local" placeholder="" required="required">
+            </div>
+              <div class="form-group">
+                <span class="form-label"><b>Arrival Date</b></span>
+                  <input class="form-control" name="Arrival_Time" type="datetime-local" placeholder="" required="required">
+            </div>
+              <div>
+            <span class="form-label"><b>Source</b></span>
+
+											<select class="form-control" name="Source" required="required">
+												<option value="Delhi">Delhi</option>
+                                                <option value="Kolkata">Kolkata</option>
+                                                <option value="Mumbai">Mumbai</option>
+                                                <option value="Chennai">Chennai</option>
+											</select>
+											<span class="select-arrow"></span>
+          </div>
+            <div>
+            <span class="form-label"><b>Destination</b></span>
+
+											<select class="form-control" name="Destination" required="required">
+												 <option value="Cochin">Cochin</option>
+                                                 <option value="Delhi">Delhi</option>
+                                                 <option value="New Delhi">New Delhi</option>
+                                                 <option value="Hyderabad">Hyderabad</option>
+                                                 <option value="Kolkata">Kolkata</option>
+											</select>
+											<span class="select-arrow"></span>
+          </div>
+              <div>
+            <span class="form-label"><b>Stopage</b></span>
+
+											<select class="form-control" name="stops" required="required">
+												    <option value="0">Non-Stop</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+											</select>
+											<span class="select-arrow"></span>
+            </div>
+              <div>
+            <span class="form-label"><b>Airline Travel</b></span>
+
+											<select class="form-control" name="airline" required="required">
+												   <option value="Jet Airways">Jet Airways</option>
+                                                   <option value="IndiGo">IndiGo</option>
+                                                   <option value="Air India">Air India</option>
+                                                   <option value="Multiple carriers">Multiple carriers</option>
+                                                   <option value="SpiceJet">SpiceJet</option>
+                                                   <option value="Vistara">Vistara</option>
+                                                   <option value="Air Asia">Air Asia</option>
+                                                   <option value="GoAir">GoAir</option>
+                                                   <option value="Multiple carriers Premium economy">Multiple carriers Premium economy</option>
+                                                   <option value="Jet Airways Business">Jet Airways Business</option>
+                                                   <option value="Vistara Premium economy">Vistara Premium economy</option>
+                                                   <option value="Trujet">Trujet</option>
+											</select>
+											<span class="select-arrow"></span>
+
+            </div>
+              <br>
+                 <button type="submit" class="btn btn-primary">See Price</button>
+     </form>
+    </div>
+
+    {% endblock %}
